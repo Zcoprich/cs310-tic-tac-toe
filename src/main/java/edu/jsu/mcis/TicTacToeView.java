@@ -5,9 +5,10 @@ import java.util.Scanner;
 public class TicTacToeView {
     
     private final Scanner keyboard;
+    private TicTacToeMove move;
     
     /* CONSTRUCTOR */
-	
+ 
     public TicTacToeView() {
         
         /* Initialize scanner (for console keyboard) */
@@ -15,15 +16,18 @@ public class TicTacToeView {
         keyboard = new Scanner(System.in);
         
     }
-	
-    public TicTacToeMove getNextMove(boolean isXTurn) {
+ 
+    public TicTacToeMove getNextMove(/*boolean isXTurn*/) {
         
         /* Prompt the player to enter the row and the column of their next move.
            Return as a TicTacToeMove object. */
         
-        // INSERT YOUR CODE HERE
-
-        return null; // remove this line later!
+        int row = keyboard.nextInt();
+        int col = keyboard.nextInt();
+        move = new TicTacToeMove(row, col);
+        
+        return move; 
+         
 
     }
 
@@ -44,5 +48,5 @@ public class TicTacToeView {
         System.out.println("\n\n" + board);
         
     }
-	
+ 
 }

@@ -4,6 +4,7 @@ public class TicTacToeController {
 
     private final TicTacToeModel model;
     private final TicTacToeView view;
+    private TicTacToeMove move;
     
     /* CONSTRUCTOR */
 
@@ -19,19 +20,35 @@ public class TicTacToeController {
     public void start() {
     
         /* MAIN LOOP (repeats until game is over) */
+      
+        while(model.isGameover() == false)
+        {
 
         /* Display the board using the View's "showBoard()", then use
            "getNextMove()" to get the next move from the player.  Enter
            the move (using the Model's "makeMark()", or display an error
            using the View's "showInputError()" if the move is invalid. */
 
-        // INSERT YOUR CODE HERE
+         view.showBoard(model.toString());
+         if(model.isXTurn())
+           System.out.println("Player 1 (X) Move: \n");
+         else
+           System.out.println("Player 2 (O) Move: \n");
+         
+         System.out.println("Enter the row and column numbers, separated by a space: ");
+         move = view.getNextMove();
+         
+         if(!model.makeMark(move.getRow(), move.getCol()))
+           view.showInputError();
+    
+         
+        }
         
         /* After the game is over, show the final board and the winner */
 
-        view.showBoard(model.toString());
+         view.showBoard(model.toString());
 
-        view.showResult(model.getResult().toString());
+         view.showResult(model.getResult().toString());
         
     }
 

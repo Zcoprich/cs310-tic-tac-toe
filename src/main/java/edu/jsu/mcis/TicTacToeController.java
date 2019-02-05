@@ -31,12 +31,13 @@ public class TicTacToeController {
 
          view.showBoard(model.toString());
          if(model.isXTurn())
-           System.out.println("Player 1 (X) Move: \n");
+           System.out.println("Player 1 (X) Move:");
          else
-           System.out.println("Player 2 (O) Move: \n");
+           System.out.println("Player 2 (O) Move:");
          
-         System.out.println("Enter the row and column numbers, separated by a space: ");
+         System.out.print("Enter the row and column numbers, separated by a space: ");
          move = view.getNextMove();
+	   System.out.println("");
          
          if(!model.makeMark(move.getRow(), move.getCol()))
            view.showInputError();

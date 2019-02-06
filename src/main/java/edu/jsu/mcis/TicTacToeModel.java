@@ -242,18 +242,12 @@ public class TicTacToeModel {
         
         /* Check the squares of the board to see if the game is a tie */
       
-        
         for(int i = 0; i < width; i++)
-        {
-          for(int j = 0; i < width; i++)
-          {
+          for(int j = 0; j < width; j++)
             if(board[i][j] == Mark.EMPTY)
               return false;
-          }
-        }
-
-        //return true;
-        return false; // remove this line later!
+        
+          return true; // remove this line later!
         
     }
 

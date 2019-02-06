@@ -224,8 +224,8 @@ public class TicTacToeModel {
         
         
         //check reverse diagnol
-        for(int i = width - 1; i >= 0; i--)
-          if(getMark(i, i) == mark)
+        for(int i = width - 1, j = 0; i >= 0; i--, j++)
+          if(getMark(i, j) == mark)
              count++;
         if(count == width)
              return true;

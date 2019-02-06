@@ -289,6 +289,7 @@ public class TicTacToeModel {
             output.append(board[i][j]);
           output.append("\n");
         }
+	output.append("\n");
         
         return output.toString();
         

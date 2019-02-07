@@ -275,13 +275,16 @@ public class TicTacToeModel {
         
     }
     
-    @Override
-    public String toString() {
+	@Override
+    	public String toString() {
         
         StringBuilder output = new StringBuilder("  ");
         
         /* Output the board contents as a string (see examples) */
-        output.append("012\n\n");
+        for(int i = 0; i < width; i++)
+          output.append(i);
+        
+        output.append("\n");
         for(int i = 0; i < width; i++)
         {
           output.append(i + " ");
@@ -289,7 +292,6 @@ public class TicTacToeModel {
             output.append(board[i][j]);
           output.append("\n");
         }
-	output.append("\n");
         
         return output.toString();
         
